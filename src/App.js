@@ -19,7 +19,6 @@ function App() {
 
     };
   };
-const tempInC = (data.main.temp - 32) * 5/9;
 
     return (
     <div className="app">
@@ -36,7 +35,7 @@ const tempInC = (data.main.temp - 32) * 5/9;
         <div className="location">
           <p>{data.name}</p> </div>
       <div className="temp">
-        {data.main ? <h1>{data.main.temp}F or {tempInC}C </h1>: null} </div>
+        {data.main ? <h1>{data.main.temp}F or {((data.main.temp - 32) * 5/9).toFixed(1)}C </h1>: null} </div>
       <div className="description">
       {data.weather ? <p>{data.weather[0].main}</p> :null }  </div>
       </div>
